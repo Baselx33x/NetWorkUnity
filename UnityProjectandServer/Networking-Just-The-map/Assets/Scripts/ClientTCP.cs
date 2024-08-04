@@ -67,9 +67,9 @@ public class ClientTCP
     private void HandlData(byte[] data)
     {
         Packet packet = new Packet(data);
-        Byte packetID = packet.GetByte();
+        byte packetID = packet.GetByte(); 
 
-
+        GameManager.instance.HandlePackets[packetID](packet);
     }
 
 }

@@ -26,12 +26,13 @@ public class Packet {
     List<byte> m_Writeable_Data = new List<byte>();
     byte[] m_Data; 
     int m_Data_Index = 0;
-
+    private int m_Packet_Length = 0;
 
     public Packet() { }
     public Packet(byte[] data) {
-     this.m_Data = data;
-     this.m_Data_Index = 0;
+        this.m_Data = data;
+        this.m_Data_Index = 0;
+        this.m_Packet_Length = GetInt();
     }
 
     public Byte GetByte()
